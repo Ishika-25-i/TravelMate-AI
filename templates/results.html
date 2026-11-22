@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Trip | TravelMate AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="results-page">
+    <header class="results-header">
+        <a href="/" class="brand">TRAVELMATE <span>AI</span></a>
+        <a href="/" class="back-link">New trip</a>
+    </header>
+    <main class="results-container">
+        <section class="trip-banner" aria-labelledby="tripTitle">
+            <div class="trip-banner-content">
+                <p class="eyebrow">YOUR PERSONALIZED ESCAPE</p>
+                <h1 id="tripTitle">Your destination</h1>
+                <p id="tripDetails" class="trip-details"></p>
+                <p id="tripSummary" class="trip-summary"></p>
+                <p id="imageCredit" class="image-credit" hidden></p>
+            </div>
+            <div class="banner-stamp" aria-hidden="true">
+                <span>YOUR</span><strong>JOURNEY</strong><span>AWAITS</span>
+            </div>
+        </section>
+        <section class="dashboard-section" aria-labelledby="stayHeading">
+            <div class="section-heading">
+                <div><p class="section-kicker">REST WELL</p><h2 id="stayHeading">Stays to consider</h2></div>
+                <span class="section-number">01</span>
+            </div>
+            <div id="hotelGrid" class="recommendation-grid"></div>
+        </section>
+        <section class="dashboard-section" aria-labelledby="itineraryHeading">
+            <div class="section-heading">
+                <div><p class="section-kicker">MAKE EVERY DAY COUNT</p><h2 id="itineraryHeading">Your itinerary</h2></div>
+                <span class="section-number">02</span>
+            </div>
+            <div id="itineraryGrid" class="itinerary-grid"></div>
+        </section>
+        <div class="recommendations-row">
+            <section class="dashboard-section" aria-labelledby="foodHeading">
+                <div class="section-heading">
+                    <div><p class="section-kicker">A TASTE OF THE PLACE</p><h2 id="foodHeading">Food &amp; cafes</h2></div>
+                    <span class="section-number">03</span>
+                </div>
+                <div id="foodList" class="simple-card-list"></div>
+            </section>
+            <section class="dashboard-section" aria-labelledby="transportHeading">
+                <div class="section-heading">
+                    <div><p class="section-kicker">GETTING AROUND</p><h2 id="transportHeading">Local transport</h2></div>
+                    <span class="section-number">04</span>
+                </div>
+                <div id="transportList" class="simple-card-list"></div>
+            </section>
+        </div>
+        <section class="budget-panel dashboard-section" aria-labelledby="budgetHeading">
+            <div class="section-heading">
+                <div><p class="section-kicker">PLAN WITH CONFIDENCE</p><h2 id="budgetHeading">Your budget at a glance</h2></div>
+                <span class="section-number">05</span>
+            </div>
+            <div class="budget-total-row">
+                <div><p class="budget-label">ESTIMATED TRIP TOTAL</p><strong id="budgetTotal" class="budget-total"></strong></div>
+                <span class="estimate-note">All amounts are estimates</span>
+            </div>
+            <div id="budgetList" class="budget-list"></div>
+            <div id="budgetMeter" class="budget-meter" role="progressbar" aria-label="Planned budget usage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            </div>
+            <p id="budgetMeterCaption" class="budget-meter-caption"></p>
+        </section>
+        <div id="planError" class="plan-error" role="alert" hidden>
+            <h2>We couldn't display this trip</h2>
+            <p id="planErrorMessage"></p>
+            <a href="/" class="gold-btn">Plan a new trip</a>
+        </div>
+        <a href="/" class="gold-btn new-trip-btn">Plan another trip</a>
+    </main>
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+</body>
+</html>
